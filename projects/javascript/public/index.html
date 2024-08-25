@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Easy QR Review Generator | Free Tool for Business Reviews</title>
+    <meta name="description" content="Generate custom QR codes for your business review pages. Send customers directly to Google, Yelp, or other review platforms. Boost reviews with this free, easy-to-use tool.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #333333);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            padding-top: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff9aa2, #86a8e7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            background-color: #d3d3d3;
+            color: #333;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #bfbfbf;
+        }
+
+        #qr-output {
+            display: none;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #qr-title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #90EE90;
+        }
+
+        #qr-code {
+            margin-bottom: 20px;
+        }
+
+        #qr-code img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #download-link {
+            display: inline-block;
+            color: #90EE90;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s;
+        }
+
+        #download-link:hover {
+            color: #fff;
+        }
+
+        .faq {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .faq h2 {
+            text-align: center;
+        }
+
+        details {
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #333333, #222222);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Easy QR Review Generator</h1>
+        <div class="description">
+            <p>Generate a QR code that sends your customers directly to your review page, allowing them to leave a review instantly. </p>
+              <p>Perfect for Google, Yelp, or any other review platform. </p>
+              <p>Add this QR code to receipts, marketing materials, or in-store displays to boost your reviews!</p>
+        </div>
+        <form id="qr-form">
+            <input type="text" id="website-url" placeholder="Enter your review page URL (Google, Yelp, etc.)" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <div id="qr-output">
+            <h2 id="qr-title">Here's your QR code!<br>Download it and use it anywhere!</h2>
+            <div id="qr-code"></div>
+            <a id="download-link" download="qr-code.png">[ Download QR Code ]</a>
+        </div>
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How do I get my Google review link?</summary>
+                <p>Search for your business on Google Maps, click "Share", then "Copy link".</p>
+            </details>
+            <details>
+                <summary>How do I get my Yelp review link?</summary>
+                <p>Go to your Yelp business page, click "Review" button, copy the URL.</p>
+            </details>
+            <details>
+                <summary>What other review platforms can I use?</summary>
+                <p>You can use TripAdvisor, Facebook, Trustpilot, or any platform-specific review URL for your business.</p>
+            </details>
+            <details>
+                <summary>How can I use this QR code?</summary>
+                <p>Print it on receipts, add it to marketing materials, display it in-store, or include it on your website to encourage reviews.</p>
+            </details>
+            <details>
+                <summary>Can I customize the QR code?</summary>
+                <p>This tool generates a standard black and white QR code. For custom designs, consider using a specialized QR code service.</p>
+            </details>
+            <details>
+                <summary>Is there a limit to how many QR codes I can generate?</summary>
+                <p>No, you can generate as many QR codes as you need, free of charge.</p>
+            </details>
+        </div>
+    </div>
+    <footer>
+        <a href="https://x.com/serpinsider" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+        </a>
+        <p>Built by <a href="https://x.com/serpinsider" target="_blank" rel="noopener noreferrer">SERP</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script>
+        const form = document.getElementById('qr-form');
+        const qrOutput = document.getElementById('qr-output');
+        const qrCodeDiv = document.getElementById('qr-code');
+        const downloadLink = document.getElementById('download-link');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted'); // Debug log
+
+            let websiteUrl = document.getElementById('website-url').value.trim();
+
+            if (!websiteUrl) {
+                alert('Please enter a website URL');
+                return;
+            }
+
+            console.log('Generating QR code for:', websiteUrl); // Debug log
+
+            // Add https:// if not present
+            if (!/^https?:\/\//i.test(websiteUrl)) {
+                websiteUrl = 'https://' + websiteUrl;
+            }
+
+            try {
+                const qr = qrcode(0, 'M');
+                qr.addData(websiteUrl);
+                qr.make();
+
+                qrCodeDiv.innerHTML = qr.createImgTag(5);
+                downloadLink.href = qrCodeDiv.querySelector('img').src;
+                qrOutput.style.display = 'block';
+                console.log('QR code generated successfully'); // Debug log
+            } catch (error) {
+                console.error('Error generating QR code:', error);
+                alert('An error occurred while generating the QR code. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
